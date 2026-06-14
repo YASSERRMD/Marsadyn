@@ -1,0 +1,15 @@
+{
+  "tenantId": "tenant-001",
+  "service": "payment-api",
+  "environment": "prod",
+  "name": "http_request_duration_ms",
+  "value": 123.4,
+  "timestamp": "2026-06-14T10:00:00Z",
+  "labels": {
+    "method": "GET",
+    "route": "/api/orders",
+    "status": "200"
+  },
+  "unit": "ms",
+  "type": "gauge"
+}

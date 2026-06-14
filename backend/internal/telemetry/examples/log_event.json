@@ -1,0 +1,19 @@
+{
+  "tenantId": "tenant-001",
+  "service": "payment-api",
+  "environment": "prod",
+  "level": "info",
+  "message": "Payment processed successfully",
+  "timestamp": "2026-06-14T10:00:00Z",
+  "labels": {
+    "method": "POST",
+    "route": "/api/payments"
+  },
+  "fields": {
+    "paymentId": "pay-123456",
+    "amount": 99.99,
+    "currency": "USD"
+  },
+  "traceId": "abc123def456",
+  "spanId": "span789"
+}
