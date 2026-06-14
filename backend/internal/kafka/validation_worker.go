@@ -7,6 +7,7 @@ import (
 	"time"
 
 	"github.com/marsadyn/marsadyn/internal/telemetry"
+	"github.com/segmentio/kafka-go"
 )
 
 type ValidationWorker struct {
@@ -34,7 +35,7 @@ func (w *ValidationWorker) Start(ctx context.Context) error {
 	return w.consumer.Consume(ctx, w.handleMessage)
 }
 
-func (w *ValidationWorker) handleMessage(msg interface{}) error {
+func (w *ValidationWorker) handleMessage(msg kafka.Message) error {
 	var rawEvent map[string]interface{}
 	if err := json.Unmarshal(msg.Value, &rawEvent); err != nil {
 		log.Printf("Failed to unmarshal message: %v", err)
