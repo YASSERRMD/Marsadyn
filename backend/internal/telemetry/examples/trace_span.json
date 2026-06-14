@@ -1,0 +1,36 @@
+{
+  "tenantId": "tenant-001",
+  "service": "payment-api",
+  "environment": "prod",
+  "traceId": "abc123def456ghi789",
+  "spanId": "span123",
+  "parentSpanId": "span456",
+  "name": "process-payment",
+  "operation": "POST /api/payments",
+  "startTime": "2026-06-14T10:00:00Z",
+  "endTime": "2026-06-14T10:00:01.234Z",
+  "durationMs": 1234.0,
+  "status": "ok",
+  "labels": {
+    "payment.method": "credit_card",
+    "payment.currency": "USD"
+  },
+  "events": [
+    {
+      "name": "payment.validated",
+      "timestamp": "2026-06-14T10:00:00.500Z",
+      "attributes": {
+        "validation.result": "success"
+      }
+    }
+  ],
+  "links": [
+    {
+      "traceId": "def456ghi789jkl012",
+      "spanId": "span789",
+      "attributes": {
+        "relationship": "follows_from"
+      }
+    }
+  ]
+}
